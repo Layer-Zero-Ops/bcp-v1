@@ -31,6 +31,10 @@ export async function discoverStores(
 
   for (const ev of events) {
     try {
+      // BEP-1: only treat events tagged protocol:"bcp/1" as BCP storefronts,
+      // so generic NIP-99 listings are ignored.
+      const isBcp = ev.tags.some((t) => t[0] === "protocol" && t[1] === "bcp/1");
+      if (!isBcp) continue;
       const store = JSON.parse(ev.content) as BCPStorefront;
       if (!verify(store)) continue; // relay cannot lie about a store's contents
       byMerchant.set(store.merchant, { store });

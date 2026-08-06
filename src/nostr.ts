@@ -36,7 +36,7 @@ export interface BCPNostrEvent {
   pubkey: string;
   created_at: number;
   /** Single tag pointing at the descriptor hash for dedup/client filtering. */
-  tags: [["d", string], ["title", string]];
+  tags: [["d", string], ["title", string], ["protocol", string]];
   /** The canonicalized descriptor, stringified, as the event content. */
   content: string;
   /** Nostr event id + sig over the above. */
@@ -55,7 +55,7 @@ export function toNostrEvent(store: BCPStorefront): Omit<BCPNostrEvent, "id" | "
     kind: BCP_KIND_DEPLOY,
     pubkey: store.merchant,
     created_at: Math.floor(Date.now() / 1000),
-    tags: [["d", hash], ["title", store.name]],
+    tags: [["d", hash], ["title", store.name], ["protocol", "bcp/1"]],
     content: canonicalizeSigned(store),
   };
 }

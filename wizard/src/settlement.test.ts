@@ -37,7 +37,7 @@ describe("BCP settlement — real LNURL-pay loop", () => {
     const custInv = await (await api("/api/v1/payments", {
       method: "POST",
       headers: { "X-Api-Key": custKey },
-      body: JSON.stringify({ out: false, amount: 50000, memo: "fund-customer" }),
+      body: JSON.stringify({ out: false, amount: 30000, memo: "fund-customer" }),
     })).json();
     const fund = await (await api("/api/v1/payments", {
       method: "POST",
