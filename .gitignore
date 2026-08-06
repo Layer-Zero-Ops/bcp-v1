@@ -1,0 +1,22 @@
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Build output
+dist/
+**/dist/
+
+# Local relay / test data
+*.log
+.DS_Store
+
+# LNBits local dev backend (cloned separately for integration tests)
+lnbits/
+
+# Secrets / local env
+.env
+.env.local
+*.env
+
+# Test harness runtime data
+/tmp/lnbits-data/
