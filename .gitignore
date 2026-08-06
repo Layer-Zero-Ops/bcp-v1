@@ -20,3 +20,6 @@ lnbits/
 
 # Test harness runtime data
 /tmp/lnbits-data/
+
+# TS build info
+*.tsbuildinfo

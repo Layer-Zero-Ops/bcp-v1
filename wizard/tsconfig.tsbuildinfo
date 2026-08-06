@@ -1,1 +1,0 @@
-{"root":["./src/app.tsx","./src/marketplace.tsx","./src/crypto.ts","./src/discover.ts","./src/lightning.ts","./src/live-relay.test.ts","./src/main.tsx","./src/publish.ts","./src/settlement.test.ts","./src/usewizard.ts","./src/wizard.test.ts","./vite.config.ts"],"version":"5.9.3"}
